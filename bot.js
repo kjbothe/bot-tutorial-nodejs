@@ -63,8 +63,7 @@ function postSpamfile() {
   for (i = 0; i < lines.length; i++) {
     words = lines[i].split(" ");
     for (j = 0; j < words.length; j++) {
-      postMessage(words[j]);
-      sleep.usleep(500000);
+      setTimeout(postMessage.bind(null, words[j]), 500);
     }
   }
 }
