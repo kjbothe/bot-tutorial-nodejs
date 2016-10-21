@@ -1,6 +1,7 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
+var sleep = require('sleep');
 
 var spamfile = "./test.txt"
 var botID = process.env.BOT_ID;
@@ -62,7 +63,8 @@ function postSpamfile() {
   for (i = 0; i < lines.length; i++) {
     words = lines[i].split(" ");
     for (j = 0; j < words.length; j++) {
-      setTimeout(postMessage(words[j]), 500);
+      postMessage(words[j]);
+      sleep.usleep(500000);
     }
   }
 }
