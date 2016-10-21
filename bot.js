@@ -1,7 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
-var sleep = require('sleep');
 
 var spamfile = "./test.txt"
 var botID = process.env.BOT_ID;
