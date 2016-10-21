@@ -60,10 +60,11 @@ function postSpamfile() {
   lines = text.split("\n");
 
   for (i = 0; i < lines.length; i++) {
-    words = lines[i].split(" ");
-    for (j = 0; j < words.length; j++) {
-      setTimeout(postMessage.bind(null, words[j]), 500);
-    }
+    setTimeout(postMessage.bind(null, lines[i]), 500);
+    //words = lines[i].split(" ");
+    //for (j = 0; j < words.length; j++) {
+      //setTimeout(postMessage.bind(null, words[j]), 500);
+    //}
   }
 }
 
