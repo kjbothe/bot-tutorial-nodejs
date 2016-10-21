@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
 
-var spamfile = "./allstar.txt"
+var spamfile = "./test.txt"
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -57,7 +57,7 @@ function postSpamfile() {
   var i, j, text, lines, words;
 
   text = fs.readFileSync(spamfile, "utf8");
-  lines = text.split(",");
+  lines = text.split("\n");
 
   for (i = 0; i < lines.length; i++) {
     words = lines[i].split(" ");
