@@ -11,7 +11,7 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage('test function arg');
+    postSpamfile();
     this.res.end();
   } else {
     console.log("don't care");
@@ -53,7 +53,7 @@ function postMessage(botResponse) {
   botReq.end(JSON.stringify(body));
 }
 
-function postAllStar() {
+function postSpamfile() {
   var i, j, text, lines, words;
 
   text = fs.readFileSync(spamfile, "utf8");
