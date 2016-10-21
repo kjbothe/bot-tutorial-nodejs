@@ -59,9 +59,9 @@ function postSpamfile() {
   text = fs.readFileSync(spamfile, "utf8");
   lines = text.split(",");
 
-  for (i = 0; i < lines.length(); i++) {
+  for (i = 0; i < lines.length; i++) {
     words = lines[i].split(" ");
-    for (j = 0; j < words.length(); j++) {
+    for (j = 0; j < words.length; j++) {
       postMessage(words[i]);
     }
   }
