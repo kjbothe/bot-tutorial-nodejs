@@ -1,6 +1,8 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var fs = require('fs');
 
+var spamfile = "./allstar.txt"
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -51,5 +53,18 @@ function postMessage(botResponse) {
   botReq.end(JSON.stringify(body));
 }
 
+function postAllStar() {
+  var i, j, text, lines, words;
+
+  text = fs.readFileSync(spamfile, "utf8");
+  lines = text.split("\n");
+
+  for (i = 0; i < lines.length(); i++) {
+    words = lines[i].split(" ");
+    for (j = 0; j < words.length(); j++) {
+      postMessage(words[i]);
+    }
+  }
+}
 
 exports.respond = respond;
